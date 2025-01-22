@@ -147,9 +147,10 @@ Currently,${unfundedgamelen} game remains unfunded. We need your help to fund th
 
 
 // create a new DOM element containing the template string and append it to the description container
-const description = createElement('p');
+const description = document.createElement('p');
 description.innerHTML = displayStr;
 descriptionContainer.appendChild(description);
+
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
  * Skills used: spread operator, destructuring, template literals, sort 
@@ -168,14 +169,17 @@ console.log("hello"); // logging to the console instead of print
 const [firstgame, secondgame] = sortedGames;
 
 // Create div elements for first and second games
-const firstgameword = document.createElement("div");
-const secondgameword = document.createElement("div");
 
-firstgameword.innerHTML = `<p>${firstgame.name}</p>`;
-secondgameword.innerHTML = `<p>${secondgame.name}</p>`;
 
-firstGameContainer.appendChild(firstgameword);
-secondGameContainer.appendChild(secondgameword);
+const firstgamename = document.createElement('h1');
+const secondgamename = document.createElement('h1');
+
+firstgamename.innerHTML = `${firstgame.name}`;
+secondgamename.innerHTML = `${secondgame.name}`;
+
+firstGameContainer.appendChild(firstgamename);
+secondGameContainer.appendChild(secondgamename);
+
 
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
